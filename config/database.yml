@@ -20,6 +20,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: playlist
+  password: <%= ENV['playlister'] %>
 
 development:
   <<: *default
@@ -81,5 +83,3 @@ test:
 production:
   <<: *default
   database: soniq_api_production
-  username: soniq_api
-  password: <%= ENV['SONIQ_API_DATABASE_PASSWORD'] %>

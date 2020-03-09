@@ -1,0 +1,19 @@
+Playlist
+has_many :Playlist_Songs
+has_many :Songs through Playlist_Songs
+name: string 
+
+Playlist_Song
+belongs_to :Playlist
+belongs_to :Song
+
+
+Song
+has_many :Playlist_Songs
+has_many :Playlists through Playlist_Songs
+name: string
+artist_name: string
+album_name: string
+image_url: string 
+
+
