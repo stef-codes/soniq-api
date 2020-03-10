@@ -1,4 +1,6 @@
 class Playlist < ApplicationRecord
-    has_many :Playlist_Songs
-    has_many :Songs through :Playlist_Songs
+    has_many :PlaylistSongs
+    has_many :Songs, through: :PlaylistSongs
+
+    validates :name, :presence => true, :uniqueness => true
 end
